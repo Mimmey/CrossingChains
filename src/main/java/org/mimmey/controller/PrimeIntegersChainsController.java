@@ -5,12 +5,14 @@ import lombok.extern.slf4j.Slf4j;
 import org.mimmey.chain.Chain;
 import org.mimmey.chain.SimpleChain;
 import org.mimmey.exception.validation.NumberIsNotPrimeException;
+import org.mimmey.exception.validation.chain.TooFewElementsException;
 import org.mimmey.exception.validation.controller.IllegalChainAdditionException;
 
 import java.math.BigInteger;
 import java.util.Map;
 
 /**
+ * {@inheritDoc}
  * Данная реализация включает в себя проверку всех элементов
  * очередей на простоту
  */
@@ -30,7 +32,8 @@ public class PrimeIntegersChainsController extends SimpleChainsController<Intege
      *
      * @param chains очереди, которые необходимо поместить в контроллер
      * @throws IllegalChainAdditionException если количество ребер в очередях разное
-     * @throws NumberIsNotPrimeException     если количество ребер в очередях разное
+     * @throws TooFewElementsException если индексы пересечений выходят за границы списка элементов какой-либо из очередей
+     * @throws NumberIsNotPrimeException     если очереди содержат не простые числа
      */
     public PrimeIntegersChainsController(Map<String, SimpleChain<Integer>> chains) {
         super(chains);

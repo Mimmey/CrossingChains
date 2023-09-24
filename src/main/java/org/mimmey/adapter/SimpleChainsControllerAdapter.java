@@ -20,7 +20,7 @@ public class SimpleChainsControllerAdapter implements ChainsControllerAdapter {
 
     /**
      * <p>
-     * Конструктор класса.
+     * Конструктор класса
      * </p>
      * <p>
      * Все поля класса заполняются при помощи копирования
@@ -31,7 +31,7 @@ public class SimpleChainsControllerAdapter implements ChainsControllerAdapter {
      * @param chainA очередь "А"
      * @param chainB очередь "В"
      * @throws IllegalEdgesException   если в списке длин ребер есть отрицательные длины
-     * @throws TooFewElementsException если индексы пересечений выходят за границы списка элементов
+     * @throws TooFewElementsException если индексы пересечений выходят за границы списка элементов какой-либо из очередей
      */
     public SimpleChainsControllerAdapter(Chain<Integer> chainA,
                                          Chain<Integer> chainB) {

@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.mimmey.chain.Chain;
 import org.mimmey.chain.SimpleChain;
 import org.mimmey.exception.NoSuchChainException;
+import org.mimmey.exception.validation.chain.TooFewElementsException;
 import org.mimmey.exception.validation.controller.IllegalChainAdditionException;
 
 import java.util.HashMap;
@@ -38,6 +39,7 @@ public class SimpleChainsController<T> implements ChainsController<T> {
      * </p>
      *
      * @param chains очереди, которые необходимо поместить в контроллер
+     * @throws TooFewElementsException если индексы пересечений выходят за границы списка элементов какой-либо из очередей
      * @throws IllegalChainAdditionException если количество ребер в очередях разное
      */
     public SimpleChainsController(Map<String, SimpleChain<T>> chains) {

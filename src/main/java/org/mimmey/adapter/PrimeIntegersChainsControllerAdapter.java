@@ -2,11 +2,12 @@ package org.mimmey.adapter;
 
 import org.mimmey.chain.Chain;
 import org.mimmey.controller.PrimeIntegersChainsController;
+import org.mimmey.exception.validation.NumberIsNotPrimeException;
 import org.mimmey.exception.validation.chain.IllegalEdgesException;
 import org.mimmey.exception.validation.chain.TooFewElementsException;
 
 /**
- * {@inheritDoc}
+ * Адаптер контроллера очередей простых чисел (под требуемый синтаксис)
  */
 public class PrimeIntegersChainsControllerAdapter extends SimpleChainsControllerAdapter {
 
@@ -16,7 +17,7 @@ public class PrimeIntegersChainsControllerAdapter extends SimpleChainsController
 
     /**
      * <p>
-     * Конструктор класса.
+     * Конструктор класса
      * </p>
      * <p>
      * Все поля класса заполняются при помощи копирования
@@ -28,6 +29,7 @@ public class PrimeIntegersChainsControllerAdapter extends SimpleChainsController
      * @param chainB очередь "В"
      * @throws IllegalEdgesException   если в списке длин ребер есть отрицательные длины
      * @throws TooFewElementsException если индексы пересечений выходят за границы списка элементов
+     * @throws NumberIsNotPrimeException если в очередях есть не простые числа
      */
     public PrimeIntegersChainsControllerAdapter(Chain<Integer> chainA,
                                                 Chain<Integer> chainB) {
