@@ -13,7 +13,7 @@ public class Main {
         Chain<Integer> chainA = new SimpleChain<>(
                 5,
                 List.of(4, 5),
-                List.of(2, 3, 5, 7, 9,
+                List.of(2, 3, 5, 7, 73,
                         11, 13, 17, 19, 23,
                         29, 31, 37, 41, 43, 47,
                         53, 59, 61, 67, 71, 73, 79, 83),
