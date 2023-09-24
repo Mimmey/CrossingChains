@@ -44,6 +44,7 @@ public class PrimeIntegersChainsController extends SimpleChainsController<Intege
      * {@inheritDoc}
      * <p>
      * Перед вставкой очередь проверяется на наличие непростых чисел
+     * </p>
      */
     @Override
     public void addChain(Chain<Integer> chain) {
@@ -56,6 +57,7 @@ public class PrimeIntegersChainsController extends SimpleChainsController<Intege
      * {@inheritDoc}
      * <p>
      * Перед вставкой в очередь элемент проверяется на простоту
+     * </p>
      */
     @Override
     public Integer push(String chainLabel, Integer pushingValue) {

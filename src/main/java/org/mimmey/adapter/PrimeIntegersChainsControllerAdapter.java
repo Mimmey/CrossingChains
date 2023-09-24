@@ -1,8 +1,6 @@
 package org.mimmey.adapter;
 
 import org.mimmey.chain.Chain;
-import org.mimmey.chain.SimpleChain;
-import org.mimmey.controller.ChainsController;
 import org.mimmey.controller.PrimeIntegersChainsController;
 import org.mimmey.exception.validation.chain.IllegalEdgesException;
 import org.mimmey.exception.validation.chain.TooFewElementsException;
@@ -12,7 +10,9 @@ import org.mimmey.exception.validation.chain.TooFewElementsException;
  */
 public class PrimeIntegersChainsControllerAdapter extends SimpleChainsControllerAdapter {
 
-    private final ChainsController<Integer> controller;
+    public PrimeIntegersChainsControllerAdapter() {
+        super.controller = new PrimeIntegersChainsController();
+    }
 
     /**
      * <p>
@@ -31,41 +31,8 @@ public class PrimeIntegersChainsControllerAdapter extends SimpleChainsController
      */
     public PrimeIntegersChainsControllerAdapter(Chain<Integer> chainA,
                                                 Chain<Integer> chainB) {
-        super();
-        this.controller = new PrimeIntegersChainsController();
+        super.controller = new PrimeIntegersChainsController();
         controller.addChain(chainA);
         controller.addChain(chainB);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public int pushA(int value) {
-        return controller.push("A", value);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public int pushB(int value) {
-        return controller.push("B", value);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public Chain<Integer> getChainA() {
-        return new SimpleChain<>(controller.getChain("A"));
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public Chain<Integer> getChainB() {
-        return new SimpleChain<>(controller.getChain("B"));
     }
 }

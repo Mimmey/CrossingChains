@@ -28,19 +28,19 @@ import org.mimmey.exception.validation.controller.IllegalChainAdditionException;
 public interface ChainsController<T> {
 
     /**
-     * Кладет очередь в контроллер
+     * Кладет копию очереди в контроллер
      *
-     * @param chain очередь, которую необходио добавить в контроллер
+     * @param chain очередь, которую необходимо добавить в контроллер
      * @throws IllegalChainAdditionException если очередь содержит отличное от других
      *                                       количество ребер
      */
     void addChain(Chain<T> chain);
 
     /**
-     * Возвращает очередь, находящуюся в контроллере
+     * Возвращает копию очереди, находящейся в контроллере
      *
      * @param chainLabel название необходимой очереди
-     * @return требуемая очередь
+     * @return копия требуемой очереди
      * @throws NoSuchChainException если такой очереди в контроллере нет
      */
     Chain<T> getChain(String chainLabel);

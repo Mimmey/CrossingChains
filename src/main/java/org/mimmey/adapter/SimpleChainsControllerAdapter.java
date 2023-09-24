@@ -12,7 +12,7 @@ import org.mimmey.exception.validation.chain.TooFewElementsException;
  */
 public class SimpleChainsControllerAdapter implements ChainsControllerAdapter {
 
-    private final ChainsController<Integer> controller;
+    protected ChainsController<Integer> controller;
 
     public SimpleChainsControllerAdapter() {
         this.controller = new SimpleChainsController<>();
