@@ -1,7 +1,7 @@
 package org.mimmey;
 
 import org.mimmey.adapter.ChainsControllerAdapter;
-import org.mimmey.adapter.SimpleChainsControllerAdapter;
+import org.mimmey.adapter.PrimeIntegersChainsControllerAdapter;
 import org.mimmey.chain.Chain;
 import org.mimmey.chain.SimpleChain;
 
@@ -27,7 +27,7 @@ public class Main {
                         53, 131, 137),
                 "B");
 
-        ChainsControllerAdapter adapter = new SimpleChainsControllerAdapter(chainA, chainB);
+        ChainsControllerAdapter adapter = new PrimeIntegersChainsControllerAdapter(chainA, chainB);
 
         System.out.println(adapter.pushA(5));
         System.out.println(chainA.getValues());
